@@ -38,18 +38,20 @@ AegisTreasury is a smart contract system that automates treasury allocation deci
 ## Quick Start
 
 ```bash
-# Install dependencies
-npm install
+# Terminal 1: Start Hardhat node
+cd contracts && HOME=/tmp/hardhat-home npx hardhat node
 
-# Run contracts
-cd contracts && npx hardhat test
+# Terminal 2: Deploy contracts
+cd contracts && HOME=/tmp/hardhat-home npx hardhat run scripts/deploy-local-fork.js --network localhost
 
-# Start backend
-cd backend && npm start
+# Terminal 3: Start backend
+cd backend && HOME=/tmp/npm-backend npm run dev
 
-# Start frontend
-cd frontend && npm start
+# Terminal 4: Start frontend
+cd frontend && npm run dev
 ```
+
+Visit `http://localhost:3000` for the dashboard, or see [QUICK_DEMO_GUIDE.md](QUICK_DEMO_GUIDE.md) for detailed demo instructions.
 
 ## Project Structure
 
@@ -61,6 +63,33 @@ aegis-treasury/
 ├── tests/              # Integration tests
 └── scripts/            # Deployment scripts
 ```
+
+## Phase 1 Status
+
+**Phase 1 (Core MVP) - 98% Complete** ✅
+
+### Completed Components
+- ✅ **Smart Contracts** (22/22 tests passing)
+  - TreasuryController, Guardian, StrategyAdapter, ExampleStrategy, MockERC20
+  - Commit: `13ab5c8`
+- ✅ **Backend Agent & API**
+  - On-chain watcher, price oracle, decision engine, proposal storage
+  - Complete API with 8 endpoints
+  - Commits: `672b3ae`, `b3a6d4f`
+- ✅ **Frontend Dashboard**
+  - React app with Dashboard, Proposals pages
+  - Components: BalanceCard, ProposalCard, WalletStatus, Layout
+  - Build: 609KB bundle (178KB gzipped)
+  - Commit: `ab3384d`
+- ✅ **Integration & Demo**
+  - Local network deployment (Hardhat localhost:8545)
+  - All services running (Backend: localhost:3001, Frontend: localhost:3000)
+  - Demo proposals included for showcase
+
+### Demo Ready
+- Full system running locally with demo data
+- See [QUICK_DEMO_GUIDE.md](QUICK_DEMO_GUIDE.md) for 5-minute demo walkthrough
+- Try the live demo at `http://localhost:3000` when running
 
 ## License
 

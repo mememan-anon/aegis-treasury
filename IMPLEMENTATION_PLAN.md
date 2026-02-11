@@ -30,11 +30,15 @@ Phase 1 — Core MVP (48‑hour sprint) ✅ COMPLETED
 - Deploy scripts: deploy.js, deploy-local-fork.js, deploy-bnb-testnet.js
 - Commit: TBD (pending push)
 
-(C) Backend Agent + Relayer (Hours 18–30) ✅
+(C) Backend Agent + Relayer (Hours 18–30) ✅ COMPLETED
 - Implemented on-chain watcher, price oracle, decision engine, proposal storage, relayer, and API.
+- Commits: 672b3ae (initial), b3a6d4f (complete API with 8 endpoints, demo data)
+- Notes: All API endpoints working, connected to local deployed contracts
 
-(D) Frontend Dashboard (Hours 30–42) ✅
+(D) Frontend Dashboard (Hours 30–42) ✅ COMPLETED
 - Set up React app with pages for dashboard and proposals, routing, and error handling.
+- Commit: ab3384d - "feat(frontend): implement dashboard and proposals UI with components and styling"
+- Notes: All components implemented (BalanceCard, ProposalCard, WalletStatus, Layout). Tailwind CSS configured. Frontend builds successfully (609KB bundle).
 (A) Scaffolding & CI (Hours 0–6)
 - Initialize project repo structure (contracts/backend/frontend/tests) — DevOps/Fullstack (0.5–1h)
 - Add basic .gitignore, license, CODE_OF_CONDUCT, CONTRIBUTING — DevOps (0.25h)
