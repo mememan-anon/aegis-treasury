@@ -6,6 +6,7 @@ import { PriceOracle } from './services/oracle';
 import { DecisionEngine } from './services/decision-engine';
 import { ProposalStorage } from './services/storage';
 import { Relayer } from './services/relayer';
+import { NotificationService } from './services/notifications';
 import { createApiRoutes } from './api/routes';
 import cron from 'node-cron';
 
@@ -16,6 +17,7 @@ export class AegisBackend {
   private decisionEngine!: DecisionEngine;
   private storage!: ProposalStorage;
   private relayer?: Relayer;
+  private notifications!: NotificationService;
 
   constructor() {
     this.app = express();
@@ -51,13 +53,19 @@ export class AegisBackend {
       }
     }
 
+    // Initialize notification service
+    this.notifications = new NotificationService();
+    console.log('Notification service initialized');
+
     // Setup API routes
     this.app.use('/api', createApiRoutes(
       this.storage,
       this.watcher,
       this.oracle,
       this.decisionEngine,
-      this.relayer
+      this.relayer,
+      undefined, // MultiSig
+      this.notifications
     ));
 
     // Start scheduled tasks

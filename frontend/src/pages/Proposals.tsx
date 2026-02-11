@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FileText, Loader2, Filter } from 'lucide-react';
+import { useToast } from '../contexts/ToastContext';
 import Layout from '../components/Layout';
 import ProposalCard from '../components/ProposalCard';
 import { Proposal } from '../types';
 
 const Proposals: React.FC = () => {
+  const { addToast } = useToast();
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -85,24 +87,27 @@ const Proposals: React.FC = () => {
       setProposals(proposals.map(p =>
         p.id === id ? { ...p, status: 'approved' as const } : p
       ));
-      alert(`Proposal ${id} approved successfully!`);
+      addToast(`Proposal ${id} approved successfully!`, 'success');
     } catch (err) {
       console.error('Error approving proposal:', err);
-      alert('Failed to approve proposal. Please try again.');
+      addToast('Failed to approve proposal. Please try again.', 'error');
     }
   };
 
   const handleExecute = async (id: string) => {
     try {
-      await axios.post(`/api/proposals/${id}/execute`);
+      const response = await axios.post(`/api/proposals/${id}/execute`);
       // Update local state
       setProposals(proposals.map(p =>
         p.id === id ? { ...p, status: 'executed' as const } : p
       ));
-      alert(`Proposal ${id} executed successfully!`);
+      addToast(`Proposal ${id} executed successfully!`, 'success');
+      if (response.data.txHash) {
+        addToast(`Transaction hash: ${response.data.txHash}`, 'info', 10000);
+      }
     } catch (err) {
       console.error('Error executing proposal:', err);
-      alert('Failed to execute proposal. Please try again.');
+      addToast('Failed to execute proposal. Please try again.', 'error');
     }
   };
 

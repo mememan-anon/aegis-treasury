@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TrendingUp, DollarSign, PieChart, Loader2 } from 'lucide-react';
+import { useToast } from '../contexts/ToastContext';
 import Layout from '../components/Layout';
 import WalletStatus from '../components/WalletStatus';
 import BalanceCard from '../components/BalanceCard';
 import { TokenBalance, Allocation, SystemStatus } from '../types';
 
 const Dashboard: React.FC = () => {
+  const { addToast } = useToast();
   const [balances, setBalances] = useState<TokenBalance[]>([]);
   const [allocations, setAllocations] = useState<Allocation[]>([]);
   const [status, setStatus] = useState<SystemStatus>();
@@ -28,9 +30,11 @@ const Dashboard: React.FC = () => {
         // Fetch system status
         const statusResponse = await axios.get('/api/status');
         setStatus(statusResponse.data);
+        addToast('Dashboard data loaded successfully', 'success');
       } catch (err) {
         console.error('Error fetching dashboard data:', err);
         setError('Failed to load dashboard data. Using mock data.');
+        addToast('Failed to load dashboard data. Using mock data.', 'warning');
         // Use mock data if API fails
         loadMockData();
       } finally {
@@ -39,7 +43,7 @@ const Dashboard: React.FC = () => {
     };
 
     fetchData();
-  }, []);
+  }, [addToast]);
 
   const loadMockData = () => {
     const mockBalances: TokenBalance[] = [

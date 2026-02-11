@@ -5,6 +5,7 @@ import { PriceOracle } from '../services/oracle';
 import { DecisionEngine } from '../services/decision-engine';
 import { Relayer } from '../services/relayer';
 import { MultiSig } from '../services/multisig';
+import { NotificationService } from '../services/notifications';
 import { Proposal } from '../types';
 import { Config } from '../services/config';
 
@@ -14,9 +15,11 @@ export function createApiRoutes(
   oracle: PriceOracle,
   decisionEngine: DecisionEngine,
   relayer?: Relayer,
-  multiSig?: MultiSig
+  multiSig?: MultiSig,
+  notifications?: NotificationService
 ): Router {
   const router = Router();
+  const notificationService = notifications || new NotificationService();
 
   /** Health / Status Endpoint */
   router.get('/status', async (req: Request, res: Response) => {
@@ -109,8 +112,18 @@ export function createApiRoutes(
         status: 'pending',
       };
       await storage.saveProposal(proposal);
+
+      // Send notification
+      await notificationService.notifyProposalCreated(
+        proposal.id,
+        proposal.type,
+        proposal.amount,
+        proposal.reason
+      );
+
       res.json({ success: true, proposal });
     } catch (error: any) {
+      await notificationService.notifySystemError(error.message, 'Create proposal');
       res.status(500).json({ success: false, error: error.message });
     }
   });
@@ -127,9 +140,21 @@ export function createApiRoutes(
       }
       // Use the strategy address from the proposal or a default
       const strategyAddress = proposal.strategy || Config.contractConfig.treasuryController;
-      await relayer.executeProposal(proposal, strategyAddress);
-      res.json({ success: true, message: 'Proposal executed' });
+      const txHash = await relayer.executeProposal(proposal, strategyAddress);
+
+      // Update proposal status
+      await storage.updateProposal(proposal.id, { status: 'executed', txHash });
+
+      // Send notification
+      await notificationService.notifyProposalExecuted(
+        proposal.id,
+        'success',
+        txHash
+      );
+
+      res.json({ success: true, message: 'Proposal executed', txHash });
     } catch (error: any) {
+      await notificationService.notifySystemError(error.message, 'Execute proposal');
       res.status(500).json({ success: false, error: error.message });
     }
   });
