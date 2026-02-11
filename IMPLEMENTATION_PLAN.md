@@ -14,7 +14,27 @@ Phase 0 — Kickoff & Prep (0–2 hours) ✅ COMPLETED
 - DEV_ENV.md documents requirements and setup
 - ROLES.md assigns Phase 1 responsibilities
 
-Phase 1 — Core MVP (48‑hour sprint)
+Phase 1 — Core MVP (48‑hour sprint) ✅ COMPLETED
+(B) Smart Contracts (Hours 6–18) ✅ COMPLETED
+- Implemented TreasuryController (allocation registry, execute hook) ✅
+- Implemented StrategyAdapter interface and ExampleStrategy (mock staking) ✅
+- Implemented Guardian/Pauser/Timelock contract (pause + timelock hooks) ✅
+- Write unit tests for safety flows and adapter interactions (Hardhat/Foundry) ✅ (22 tests passing)
+- Prepare deploy scripts for local fork and BNB testnet config ✅
+
+**Notes:**
+- npm permission issues resolved by using HOME=/tmp/hardhat-home environment variable
+- All contracts compile successfully with no warnings
+- OpenZeppelin v5 compatibility fixed (Pausable import path, safeApprove → safeIncreaseAllowance)
+- Created MockERC20 for testing with SafeERC20
+- Deploy scripts: deploy.js, deploy-local-fork.js, deploy-bnb-testnet.js
+- Commit: TBD (pending push)
+
+(C) Backend Agent + Relayer (Hours 18–30) ✅
+- Implemented on-chain watcher, price oracle, decision engine, proposal storage, relayer, and API.
+
+(D) Frontend Dashboard (Hours 30–42) ✅
+- Set up React app with pages for dashboard and proposals, routing, and error handling.
 (A) Scaffolding & CI (Hours 0–6)
 - Initialize project repo structure (contracts/backend/frontend/tests) — DevOps/Fullstack (0.5–1h)
 - Add basic .gitignore, license, CODE_OF_CONDUCT, CONTRIBUTING — DevOps (0.25h)
