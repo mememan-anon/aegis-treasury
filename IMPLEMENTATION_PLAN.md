@@ -1,10 +1,18 @@
 Below is a clear, actionable breakdown of tasks for AegisTreasury organized into phases. Each phase lists concrete tasks, suggested owners/roles, and rough time estimates so you can assign and track work during the hackathon.
 
-Phase 0 — Kickoff & Prep (0–2 hours)
-- Create repo + branches (main, dev, features) — Dev lead (0.5h)
-- Write README, success criteria, and one‑page pitch — Product/PM (0.5–1h)
-- Setup dev environment docs (Hardhat/Foundry config, node/npm versions) — DevOps (0.5–1h)
-- Assign roles and owners for Phase 1 — Team lead (0.25h)
+Phase 0 — Kickoff & Prep (0–2 hours) ✅ COMPLETED
+- Create repo + branches (main, dev, features) — Dev lead (0.5h) ✅
+- Write README, success criteria, and one‑page pitch — Product/PM (0.5–1h) ✅
+- Setup dev environment docs (Hardhat/Foundry config, node/npm versions) — DevOps (0.5–1h) ✅
+- Assign roles and owners for Phase 1 — Team lead (0.25h) ✅
+
+**Notes:**
+- Time spent: ~30 minutes
+- Initial commit: 519b9a8
+- All branches created: main, dev, features
+- README.md includes success criteria and one-page pitch
+- DEV_ENV.md documents requirements and setup
+- ROLES.md assigns Phase 1 responsibilities
 
 Phase 1 — Core MVP (48‑hour sprint)
 (A) Scaffolding & CI (Hours 0–6)
