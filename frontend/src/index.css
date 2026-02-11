@@ -1,3 +1,42 @@
+/* Global Styles for Frontend */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles */
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Utility classes for easy adjustments */
+.bg-slate-900 {
+  background-color: #0f172a;
+}
+
+.bg-emerald-500 {
+  background-color: #10b981;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-slate-400 {
+  color: #9ca3af;
+}
+
+.border {
+  border: 1px solid;
+}
+
+@media (max-width: 768px) {
+  .flex-col {
+    flex-direction: column;
+  }
+}
