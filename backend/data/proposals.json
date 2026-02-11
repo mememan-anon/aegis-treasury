@@ -20,5 +20,15 @@
     "strategy": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
     "reason": "Harvest staking rewards from strategy",
     "status": "pending"
+  },
+  {
+    "id": "1770851579696",
+    "timestamp": 1770851579696,
+    "token": "0x0000000000000000000000000000000000000000",
+    "amount": "1000000000000000000000",
+    "type": "deposit",
+    "strategy": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+    "reason": "Test proposal for frontend verification",
+    "status": "pending"
   }
 ]
