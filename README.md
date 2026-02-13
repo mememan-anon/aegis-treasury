@@ -25,9 +25,9 @@ OpenClaw is about autonomous AI apps that can act and transact onchain. Aegis Tr
 
 The screenshots in the repo root are **AI build logs** (not UI mockups). They document AI-assisted development by the in-project agent **Mr Recoup** and show the system being built with AI tooling:
 
-- `Screenshot 2026-02-11 182603.png`
-- `Screenshot 2026-02-11 182845.png`
-- `Screenshot 2026-02-11 182900.png`
+![AI Build Log 1](Screenshot%202026-02-11%20182603.png)
+![AI Build Log 2](Screenshot%202026-02-11%20182845.png)
+![AI Build Log 3](Screenshot%202026-02-11%20182900.png)
 
 ## Architecture
 
