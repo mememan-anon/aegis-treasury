@@ -1,4 +1,4 @@
-﻿# Aegis Treasury � OpenClaw Edition
+﻿# Aegis Treasury - OpenClaw Edition
 
 Aegis Treasury is a fully on-chain, AI-first treasury automation system built for the **Good Vibes Only: OpenClaw Edition** hackathon. It monitors allocations, proposes rebalances, and executes real transactions on BNB Chain testnet. If it runs, ships, and executes onchain, it counts.
 
@@ -108,13 +108,13 @@ This runs backend + frontend together.
 
 ### 4) Mint Demo Tokens (if needed)
 
-Use the Dashboard �Mint Tokens� button to mint TST or TST2 directly into the treasury.
+Use the Dashboard -Mint Tokens- button to mint TST or TST2 directly into the treasury.
 
 ### 5) Create Proposals
 
 - Open **Proposals**
 - Choose deposit/withdraw/harvest
-- Use �Max� to stay within available balances
+- Use -Max- to stay within available balances
 - Approve, then Execute
 - Click tx hash to verify on BscScan
 
