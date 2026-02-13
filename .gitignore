@@ -25,6 +25,7 @@ typechain-types/
 *.key
 *.pem
 private.key
+BUILD_DESCRIPTION.md
 
 # IDE
 .vscode/
