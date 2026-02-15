@@ -1,6 +1,6 @@
-﻿# Aegis Treasury - OpenClaw Edition
+﻿# Equilibra - OpenClaw Edition
 
-Aegis Treasury is a fully on-chain, AI-first treasury automation system built for the **Good Vibes Only: OpenClaw Edition** hackathon. It monitors allocations, proposes rebalances, and executes real transactions on BNB Chain testnet. If it runs, ships, and executes onchain, it counts.
+Equilibra is a fully on-chain, AI-first treasury automation system built for the **Good Vibes Only: OpenClaw Edition** hackathon. It monitors allocations, proposes rebalances, and executes real transactions on BNB Chain testnet. If it runs, ships, and executes onchain, it counts.
 
 This project demonstrates the OpenClaw theme: **autonomous agents that observe, decide, and transact onchain** with verifiable proof (tx hashes on BscScan).
 
@@ -15,7 +15,7 @@ This project demonstrates the OpenClaw theme: **autonomous agents that observe, 
 
 ## OpenClaw Alignment
 
-OpenClaw is about autonomous AI apps that can act and transact onchain. Aegis Treasury implements this with:
+OpenClaw is about autonomous AI apps that can act and transact onchain. Equilibra implements this with:
 
 - **Autonomous decision engine** that turns allocation drift into proposals.
 - **Relayer agent** that signs and executes onchain transactions.

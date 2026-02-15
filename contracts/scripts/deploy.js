@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 async function main() {
-  console.log("Deploying AegisTreasury contracts...");
+  console.log("Deploying Equilibra contracts...");
   console.log("Network:", hre.network.name);
 
   const [deployer] = await hre.ethers.getSigners();

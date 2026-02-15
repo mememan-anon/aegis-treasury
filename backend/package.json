@@ -1,7 +1,7 @@
 {
-  "name": "aegis-treasury-backend",
+  "name": "equilibra-backend",
   "version": "1.0.0",
-  "description": "AegisTreasury backend agent and API",
+  "description": "Equilibra backend agent and API",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",

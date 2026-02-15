@@ -10,7 +10,7 @@ import { NotificationService } from './services/notifications';
 import { createApiRoutes } from './api/routes';
 import cron from 'node-cron';
 
-export class AegisBackend {
+export class EquilibraBackend {
   private app: Application;
   private watcher!: OnChainWatcher;
   private oracle!: PriceOracle;
@@ -31,7 +31,7 @@ export class AegisBackend {
   }
 
   async initialize(): Promise<void> {
-    console.log('Initializing AegisTreasury Backend...');
+    console.log('Initializing Equilibra Backend...');
 
     // Initialize services
     this.watcher = new OnChainWatcher(Config.contractConfig);
@@ -135,7 +135,7 @@ export class AegisBackend {
     const port = Config.apiPort;
     this.app.listen(port, () => {
       console.log(`\n========================================`);
-      console.log(`AegisTreasury Backend Running`);
+      console.log(`Equilibra Backend Running`);
       console.log(`========================================`);
       console.log(`API: http://localhost:${port}`);
       console.log(`Health: http://localhost:${port}/api/status`);
@@ -146,7 +146,7 @@ export class AegisBackend {
 
 // Main entry point
 async function main() {
-  const backend = new AegisBackend();
+  const backend = new EquilibraBackend();
   await backend.initialize();
   await backend.start();
 }

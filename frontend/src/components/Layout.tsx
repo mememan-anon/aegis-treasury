@@ -24,8 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Wallet className="h-[18px] w-[18px] text-white" aria-hidden="true" />
             </div>
             <div className="hidden sm:block">
-              <span className="text-[15px] font-bold tracking-tight text-white">Aegis</span>
-              <span className="text-[15px] font-medium tracking-tight text-[var(--muted)] ml-1">Treasury</span>
+              <span className="text-[15px] font-bold tracking-tight text-white">Equilibra</span>
             </div>
           </Link>
 
@@ -75,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Shield className="h-3.5 w-3.5 text-[var(--accent)]" />
             <span>Security-first Treasury Automation</span>
           </div>
-          <span>2026 Aegis Treasury</span>
+          <span>2026 Equilibra</span>
         </div>
       </footer>
     </div>

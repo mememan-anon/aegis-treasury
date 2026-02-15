@@ -1,6 +1,6 @@
-# AegisTreasury Backend
+# Equilibra Backend
 
-Backend agent + API for Aegis Treasury (OpenClaw Edition).
+Backend agent + API for Equilibra (OpenClaw Edition).
 
 ## What This Backend Does
 

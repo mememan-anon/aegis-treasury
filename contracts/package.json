@@ -1,7 +1,7 @@
 {
-  "name": "aegis-treasury-contracts",
+  "name": "equilibra-contracts",
   "version": "1.0.0",
-  "description": "AegisTreasury smart contracts",
+  "description": "Equilibra smart contracts",
   "scripts": {
     "compile": "cross-env HOME=/tmp/hardhat-home npx hardhat compile",
     "test": "cross-env HOME=/tmp/hardhat-home npx hardhat test",

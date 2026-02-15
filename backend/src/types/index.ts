@@ -1,4 +1,4 @@
-// Type definitions for AegisTreasury backend
+// Type definitions for Equilibra backend
 
 export interface ContractConfig {
   treasuryController: string;

@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const hre = require("hardhat");
 
-describe("AegisTreasury Contracts", function () {
+describe("Equilibra Contracts", function () {
   let guardian, treasury, strategy, mockToken, owner, relayer, user;
 
   beforeEach(async function () {
